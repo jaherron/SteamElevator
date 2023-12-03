@@ -45,9 +45,9 @@ namespace SteamElevator
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\Program Files (x86)\Steam\steam.exe","steam://exit");
+            Process.Start(@"C:\Program Files (x86)\Steam\steam.exe", "steam://exit");
             quitButton.Enabled = false;
-            while (Process.GetProcessesByName("steam").Length > 0) {}
+            while (Process.GetProcessesByName("steam").Length > 0) { }
             RefreshStatus();
 
         }
@@ -80,6 +80,12 @@ namespace SteamElevator
         {
             Process.Start(@"C:\Program Files (x86)\Steam\steam.exe");
             RefreshStatus();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
     }
 }
